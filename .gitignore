@@ -1,0 +1,22 @@
+# Python environment
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+
+# SIGMA tool outputs / converted rules
+*.json
+*.log
+*.csv
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE/editor specific
+.vscode/
+.idea/
+*.swp
