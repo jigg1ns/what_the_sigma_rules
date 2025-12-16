@@ -1,0 +1,20 @@
+title: Mimikatz Memssp Module Detection
+id: b8c9d0e1-f2a3-4b5c-6d7e-8f9a0b1c2d3e
+description: Detects Mimikatz memssp module via mimilsa.log file creation
+status: stable
+author: DetectionStream
+references:
+  - https://attack.mitre.org/techniques/T1556/
+tags:
+  - attack.credential_access
+  - attack.t1556
+logsource:
+  product: windows
+  category: file_event
+detection:
+  selection:
+    TargetFileName|endswith: 'mimilsa.log'
+  condition: selection
+falsepositives:
+  - Unlikely
+level: critical
