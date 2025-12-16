@@ -1,0 +1,20 @@
+title: Backups Deleted Via Wbadmin.EXE
+id: e1aacfb9-aaf1-459c-8a2c-0e5a9342f7d8
+description: Detects the deletion of backups via "wbadmin.exe".
+status: test
+author: jehuty
+references: []
+tags:
+  - attack.impact
+  - attack.t1490
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    OriginalFileName|endswith: 'wbadmin.exe'
+    CommandLine|contains: 'DELETE BACKUP'
+  condition: selection
+falsepositives:
+  - Unknown
+level: high
